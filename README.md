@@ -1,2 +1,3 @@
-# playwright-ci-test
-testing running playwright tests in the pipeline from a container
+# ci-test
+
+<a href="https://blog.devops.dev/integrating-playwright-in-ci-with-github-actions-and-docker-7baafe76de99">Link to artivle<a>
