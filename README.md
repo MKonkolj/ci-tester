@@ -7,4 +7,6 @@
 to update the dockerhub image with tests you have to tag a new version
 `git tag -a v1.0.1 -m "Draft version"`
 `git push origin v1.0.1`
-this runs the `push-image.yml` pipeline
+
+this runs the `push-image.yml` pipeline which uploads the image to dockerhub
+<a href="https://hub.docker.com/r/mkonkolj/ci-tester">mkonkolj/ci-tester:latest</a>
