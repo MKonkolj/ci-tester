@@ -25,7 +25,7 @@ jobs:
       - name: pull and run the test from image
         id: tests
         run: |
-          docker pull ${{ vars.DOCKER_USER_NAME }}/playwright-ui-typescript:latest
+          docker pull mkonkolj/ci-tester:latest
           docker run  -v ./playwright-report:/app/playwright-report \ 
                       -v ./test-result:/app/test-result \
                       ${{ vars.DOCKER_USER_NAME }}/playwright-ui-typescript:latest \
