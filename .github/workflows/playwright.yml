@@ -27,7 +27,7 @@ jobs:
         run: |
           docker pull mkonkolj/ci-tester:latest
           docker run  -v ./playwright-report:/app/playwright-report \
-                mkonkolj/ci-tester:latest:latest \
+                mkonkolj/ci-tester:latest \
                 -c "npx playwright test"
            export count=$(cat ./playwright-report/result.txt | grep Failed | cut -d ':' -f 2 | tr -d ' ')
            echo "fail_count=$count" >> "$GITHUB_OUTPUT"
