@@ -30,7 +30,7 @@ jobs:
                       -v ./test-results:/app/test-results \
                       mkonkolj/ci-tester:latest \
                       -c "npx playwright test"
-          export status=$(cat ./test-results/.last-run.json | grep status)
+          export status=$(cat ./test-results/.last-run.json | grep status | cut -d'"' -f4)
           echo "status=$status" >> "$GITHUB_OUTPUT"
 
       # - name: Add the test summary status back to PR comment
