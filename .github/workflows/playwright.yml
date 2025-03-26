@@ -26,7 +26,7 @@ jobs:
         id: tests
         run: |
           docker pull mkonkolj/ci-tester:latest
-          docker run  -v ./playwright-report:/app/playwright-report \ 
+          docker run  -v ./playwright-report:/app/playwright-report \
                       -v ./test-result:/app/test-result \
                       mkonkolj/ci-tester:latest \
                       -c "npx playwright test"
