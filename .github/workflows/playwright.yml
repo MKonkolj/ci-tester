@@ -27,7 +27,7 @@ jobs:
         run: |
           docker pull mkonkolj/ci-tester:latest
           docker run  -v ./playwright-report:/app/playwright-report \
-                      -v ./test-result:/app/test-result \
+                      -v ./test-results:/app/test-result \
                       mkonkolj/ci-tester:latest \
                       -c "npx playwright test"
           export status=$(cat ./test-results/.last-run.json | grep status | cut -d'"' -f4)
@@ -53,7 +53,7 @@ jobs:
       - name: Fail the job if there any failed case
         if: ${{ steps.tests.outputs.status != 'passed' }}
         run: |
-          echo "Tests status: ${{ steps.tests.outputs.status }}""
+          echo "Tests status: ${{ steps.tests.outputs.status }}"
           exit 1
 
     outputs:
